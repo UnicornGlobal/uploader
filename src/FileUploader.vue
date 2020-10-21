@@ -278,6 +278,7 @@
                 this.$refs['input'].click()
             },
             onChange(event) {
+                this.$emit('selected', 1);
                 return this.$validator.validateAll().then((valid) => {
                     if (!valid) {
                         this.uploading = false
@@ -368,7 +369,7 @@
                 return this.$http.post(this.url, formData, {
                     headers: {'Content-Type': 'multipart/form-data'},
                     onUploadProgress: (event) => {
-                        this.$emit('progress', (event.total / event.loaded) * 100)
+                        this.$emit('progress', (event.loaded / event.total) * 100)
                     }
                 }).then((response) => {
                     this.$emit('uploaded', response.data)
