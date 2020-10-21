@@ -6,12 +6,13 @@
   "private": false,
   "license": "MIT",
   "scripts": {
+    "prepare": "npm run build",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UnicornGlobal/uploader"
+    "url": "git+https://github.com/vinothcl/uploader"
   },
   "files": [
     "index.js",
