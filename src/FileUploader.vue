@@ -278,7 +278,6 @@
                 this.$refs['input'].click()
             },
             onChange(event) {
-                this.$emit('selected', 1);
                 return this.$validator.validateAll().then((valid) => {
                     if (!valid) {
                         this.uploading = false
